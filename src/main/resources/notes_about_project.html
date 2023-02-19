@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Заметки по проекту messager-kotlin</title>
+
+    <header>Описание файла application.properties<br></header>
+    #create base with start app<br>
+    spring.jpa.generate-ddl=true<br>
+    #drop base with finished app<br>
+    spring.jpa.hibernate.ddl-auto=create-drop<br>
+    #localhost auth<br>
+    spring.datasource.url=jdbc:postgresql://localhost:5432/messager_kotlin<br>
+    spring.datasource.username=postgres<br>
+    spring.datasource.password=root<br>
+    #sql, hibernate properties<br>
+    spring.jpa.show-sql=true<br>
+    spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect<br>
+    spring.jpa.properties.hibernate.format_sql=true<br>
+
+
+</head>
+<body>
+
+</body>
+</html>
