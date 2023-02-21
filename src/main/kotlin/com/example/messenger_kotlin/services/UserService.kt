@@ -8,4 +8,5 @@ interface UserService {
     fun retrieveUserData(userName:String):User?
     fun retrieveUserData(id:Long):User?
     fun userNameExists(userName:String):Boolean
+    abstract fun obscurePassword(user: User?)
 }
