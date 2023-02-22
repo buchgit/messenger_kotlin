@@ -13,6 +13,7 @@ class Message (
     @ManyToOne(optional = false)
     @JoinColumn(name = "recipient_id", referencedColumnName = "user_id")
     var recipient:User? = null,
+    var body:String? = "",
     @ManyToOne(optional = false)
     @JoinColumn(name = "conversation_id", referencedColumnName = "id")
     var conversation:Conversation? = null,

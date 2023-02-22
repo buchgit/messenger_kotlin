@@ -1,5 +1,7 @@
 package com.example.messenger_kotlin.services
 
+import InvalidUserIdException
+import UsernameUnavailableException
 import com.example.messenger_kotlin.models.User
 import com.example.messenger_kotlin.repositories.UserRepository
 import org.springframework.stereotype.Service
@@ -51,10 +53,4 @@ class UserServiceImpl(val repository: UserRepository):UserService {
     }
 }
 
-class UsernameUnavailableException(message:String): Throwable() {
 
-}
-
-class InvalidUserIdException(message: String):Throwable() {
-
-}
