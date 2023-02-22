@@ -21,11 +21,13 @@ class UserServiceImpl(val repository: UserRepository):UserService {
     }
 
     override fun listUsers(currentUser: User): List<User> {
-        TODO("Not yet implemented")
+        return repository.findAll().mapTo (ArrayList()) { it }.filter { it!=currentUser } as List<User>
     }
 
     override fun retrieveUserData(userName: String): User? {
-        TODO("Not yet implemented")
+        val user = repository.findByUserName(userName)
+        obscurePassword(user)
+        return user
     }
 
     @Throws(InvalidUserIdException::class)
