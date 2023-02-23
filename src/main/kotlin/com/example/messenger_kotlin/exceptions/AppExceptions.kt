@@ -13,3 +13,7 @@ class MessageEmptyException:RuntimeException() {
 class MessageRecipientInvalidException(message:String) :RuntimeException(){
 
 }
+
+class ConversationInvalidException(s: String) : RuntimeException() {
+
+}
