@@ -1,12 +1,16 @@
-class UsernameUnavailableException(message:String): RuntimeException() {
+class UsernameUnavailableException(override val message:String = "Invalid user name"): RuntimeException() {
 
 }
 
-class InvalidUserIdException(message: String): RuntimeException() {
+class InvalidUserIdException(override val message: String = "Invalid user id"): RuntimeException() {
 
 }
 
-class MessageEmptyException:RuntimeException() {
+class UserStatusEmptyException(override val message: String = "A user's status cannot be empty"):RuntimeException(){
+
+}
+
+class MessageEmptyException(override val message: String = "A message can't be empty"):RuntimeException() {
 
 }
 
