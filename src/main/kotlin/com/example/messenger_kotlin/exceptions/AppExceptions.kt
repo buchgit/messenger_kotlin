@@ -10,14 +10,18 @@ class UserStatusEmptyException(override val message: String = "A user's status c
 
 }
 
+class UserDeactivatedException(override val message: String) :RuntimeException(){
+
+}
+
 class MessageEmptyException(override val message: String = "A message can't be empty"):RuntimeException() {
 
 }
 
-class MessageRecipientInvalidException(message:String) :RuntimeException(){
+class MessageRecipientInvalidException(override val message:String) :RuntimeException(){
 
 }
 
-class ConversationInvalidException(s: String) : RuntimeException() {
+class ConversationInvalidException(override  val message:String = "Conversation is invalid") : RuntimeException() {
 
 }
