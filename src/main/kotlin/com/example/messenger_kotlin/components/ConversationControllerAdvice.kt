@@ -13,4 +13,5 @@ class ConversationControllerAdvice {
         val res = ErrorResponse("", conversationInvalidException.message)
         return ResponseEntity.unprocessableEntity().body(res)
     }
+
 }
