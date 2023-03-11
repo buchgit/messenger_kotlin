@@ -26,10 +26,11 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.security:spring-security-test")
-    implementation ("jakarta.validation:jakarta.validation-api:3.0.2")
+    //implementation ("jakarta.validation:jakarta.validation-api:3.0.2")
     // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
     implementation ("io.jsonwebtoken:jjwt:0.6.0")
-
+    // https://mvnrepository.com/artifact/javax.validation/validation-api
+    implementation("javax.validation:validation-api:2.0.1.Final")
 
 }
 

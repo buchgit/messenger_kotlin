@@ -27,7 +27,7 @@ class UserServiceImpl(val repository: UserRepository):UserService {
     }
 
     override fun retrieveUserData(userName: String): User? {
-        val user = repository.findByUserName(userName)
+        val user = repository.findByUsername(userName)
         obscurePassword(user)
         return user
     }
@@ -45,7 +45,7 @@ class UserServiceImpl(val repository: UserRepository):UserService {
 
 
     override fun userNameExists(userName: String): Boolean {
-        return repository.findByUserName(userName)!=null
+        return repository.findByUsername(userName)!=null
     }
 
     override fun obscurePassword(user: User?) {
