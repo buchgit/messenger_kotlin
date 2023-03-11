@@ -21,13 +21,13 @@ class WebSecurityConfig(val userDetailsService: AppUserDetailsService) : WebSecu
     @Throws(Exception::class)
     override fun configure(http: HttpSecurity) {
         http.csrf().disable().authorizeRequests()
-            .antMatchers(HttpMethod.POST,"users/registrations")
-            .permitAll()
+            .antMatchers(HttpMethod.POST,"/users/registrations").permitAll()
             .antMatchers(HttpMethod.POST,"/login").permitAll()
             .anyRequest().authenticated()
             .and()
             .addFilterBefore(JWTLoginFilter("/login",authenticationManager()),UsernamePasswordAuthenticationFilter::class.java)
             .addFilterBefore(JWTAuthenticationFilter(),UsernamePasswordAuthenticationFilter::class.java)
+            //.formLogin()
     }
 
     @Throws(Exception::class)

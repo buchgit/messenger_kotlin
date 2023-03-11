@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController
 @RequestMapping("/users")
 class UserController(val userServiceImpl: UserServiceImpl,userRepository: UserRepository) {
     @PostMapping
-    @RequestMapping("/registration")
+    @RequestMapping("/registrations")
     fun create(@Validated @RequestBody userModel: User):ResponseEntity<User>{
         val user = userServiceImpl.attemptRegistration(userModel)
         return ResponseEntity.ok(user)
