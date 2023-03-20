@@ -1,6 +1,7 @@
 package com.example.messenger_kotlin.services
 
 import InvalidUserIdException
+import UserStatusEmptyException
 import UsernameUnavailableException
 import com.example.messenger_kotlin.models.User
 import com.example.messenger_kotlin.repositories.UserRepository
@@ -33,7 +34,7 @@ class UserServiceImpl(val repository: UserRepository):UserService {
     }
 
     @Throws(InvalidUserIdException::class)
-    override fun retrieveUserData(id: Long): User? {
+    override fun retrieveUserData(id: Long): User {
         val userOptional = repository.findById(id)
         if (userOptional.isPresent) {
             val user = userOptional.get()
@@ -50,6 +51,16 @@ class UserServiceImpl(val repository: UserRepository):UserService {
 
     override fun obscurePassword(user: User?) {
         user?.password = "XXX XXXX XXX"
+    }
+
+    @Throws(UserStatusEmptyException::class)
+    override fun updateUserStatus(currentUser: User, updateDetails: User):User {
+        if (!updateDetails.status.isEmpty()){
+            currentUser.status = updateDetails.status
+            repository.save(currentUser)
+            return currentUser
+        }
+        throw UserStatusEmptyException()
     }
 }
 
