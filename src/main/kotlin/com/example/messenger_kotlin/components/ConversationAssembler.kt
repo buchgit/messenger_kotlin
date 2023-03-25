@@ -17,7 +17,7 @@ class ConversationAssembler(val conversationService: ConversationServiceImpl,val
         return ConversationVO(conversation.id,conversationService.nameSecondParty(conversation,userId),conversationMessages)
     }
     fun toConversationListVO(conversations:ArrayList<Conversation>,userId: Long):ConversationListVO{
-        val conversationVOList = conversations.map { ConversationVO(it,userId) }
+        val conversationVOList = conversations.map { toConversationVO(it,userId) }
         return ConversationListVO(conversationVOList)
     }
 }
