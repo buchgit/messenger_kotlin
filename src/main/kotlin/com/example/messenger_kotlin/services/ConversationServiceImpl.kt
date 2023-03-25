@@ -4,7 +4,9 @@ import ConversationInvalidException
 import com.example.messenger_kotlin.models.Conversation
 import com.example.messenger_kotlin.models.User
 import com.example.messenger_kotlin.repositories.ConversationRepository
+import org.springframework.stereotype.Service
 
+@Service
 class ConversationServiceImpl(private val repository: ConversationRepository) : ConversationService {
     override fun createConversation(sender: User, recipient: User): Conversation {
         val conversation = Conversation(sender,recipient)
