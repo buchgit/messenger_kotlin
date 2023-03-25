@@ -8,7 +8,9 @@ import com.example.messenger_kotlin.models.User
 import com.example.messenger_kotlin.repositories.ConversationRepository
 import com.example.messenger_kotlin.repositories.MessageRepository
 import com.example.messenger_kotlin.repositories.UserRepository
+import org.springframework.stereotype.Service
 
+@Service
 class MessageServiceImpl(
     val repository: MessageRepository,
     val conversationRepository: ConversationRepository,
